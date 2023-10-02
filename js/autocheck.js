@@ -238,6 +238,9 @@
 // console.log(isValidPassword("mangodab3st")); //false
 // console.log(isValidPassword("jqueryismyjam")); //true
 
+
+
+
 // ====================AUTOCHECK 3.1====================
 
 // Додай вираз перевірки повноліття користувача, значення параметра age, в умову для інструкції if.
@@ -814,7 +817,319 @@
 // console.log(checkForSpam("JavaScript weekly newsletter")); // false
 // console.log(checkForSpam("Amazing SalE, only tonight!")); //true
 
+
+
 // ====================AUTOCHECK 4.1====================
+
+// Запиши умову в інструкції if таким чином, щоб функція працювала правильно.
+
+// function checkAge(age) {
+//   if (age >= 18) { // Change this line
+//     return "You are an adult";
+//   }
+
+//   return "You are a minor";
+// }
+
+// console.log(checkAge(20)); //You are an adult
+// console.log(checkAge(8)); //You are a minor
+
+// ====================AUTOCHECK 4.2====================
+
+// Функція checkPassword отримує пароль користувача у параметр password, перевіряє його на збіг з паролем адміністратора
+// у змінній ADMIN_PASSWORD і повертає повідомлення про результат порівняння.
+
+// Виконай рефакторинг коду функції checkPassword, використовуючи патерн «раннє повернення»:
+
+// видали змінну message
+// видали else
+// код повинен працювати так само, як і до оптимізації
+
+// function checkPassword(password) {
+//   const ADMIN_PASSWORD = "jqueryismyjam";
+//   // Change code below this line
+
+//   if (password === ADMIN_PASSWORD) {
+//     return "Welcome!";
+//   }
+//   return  "Access denied, wrong password!";
+//   }
+
+// console.log(checkPassword("mangohackzor")); //Access denied, wrong password!
+// console.log(checkPassword("jqueryismyjam")); //"Welcome!
+
+// ====================AUTOCHECK 4.3====================
+
+// Функція checkStorage перевіряє можливість оформлення замовлення і повертає повідомлення про результат.
+// Вона приймає два параметри, значення яких будуть задаватися під час її виклику.
+
+// available - доступна кількість товарів на складі
+// ordered - кількість одиниць товару в замовленні
+// Виконай рефакторинг коду функції checkStorage, використовуючи патерн «раннє повернення».
+
+// function checkStorage(available, ordered) {
+//   // Change code below this line
+
+//   if (ordered === 0) {
+//     return "Your order is empty!";
+//   }
+  
+//   if (ordered > available) {
+//     return "Your order is too large, not enough goods in stock!";
+//   }
+
+//   return "The order is accepted, our manager will contact you";
+//   }
+  
+// console.log(checkStorage(100, 50)); //The order is accepted, our manager will contact you
+// console.log(checkStorage(100, 130)); //Your order is too large, not enough goods in stock!
+// console.log(checkStorage(70, 0)); //Your order is empty!
+
+// ====================AUTOCHECK 4.4====================
+
+// Оголоси змінну fruits і присвой їй масив фруктів - рядків "apple", "plum", "pear" і "orange".
+
+// const fruits = ['apple', 'plum', 'pear', 'orange'];
+
+// console.log(fruits); //[apple, plum, pear, orange]
+
+// ====================AUTOCHECK 4.5====================
+
+// Оголоси три змінні і присвой кожній з них значення, використовуючи нотацію квадратних дужок.
+
+// Ім'я змінної	Значення змінної
+// firstElement	перший елемент масиву
+// secondElement	другий елемент масиву
+// lastElement	останній елемент масиву
+
+// const fruits = ["apple", "plum", "pear", "orange"];
+
+// // Change code below this line
+
+// firstelement = fruits[0];
+// secondelement = fruits[1];
+// lastelement = fruits[fruits.length-1];
+
+// console.log(firstelement); //"apple"
+// console.log(secondelement); //"plum"
+// console.log(lastElement); //"orange"
+
+// ====================AUTOCHECK 4.6====================
+
+// Виконай перевизначення значення елементів з індексами 1 і 3.
+// Заміни "plum" на "peach", а "orange" на "banana".
+
+// const fruits = ["apple", "plum", "pear", "orange"];
+
+// // Write your code under this line
+
+// fruits[1] = "peach";
+// fruits[3] = "banana";
+
+// console.log(fruits); //["apple", "peach", "pear", "banana"]
+
+// ====================AUTOCHECK 4.7====================
+
+// Оголоси змінну fruitsArrayLength і присвой їй довжину масиву fruits, використовуючи властивість length.
+
+// const fruits = ["apple", "peach", "pear", "banana"];
+
+// // Change code below this line
+
+// const fruitsArrayLength = fruits.length;
+
+// console.log(fruitsArrayLength); //4
+
+
+// ====================AUTOCHECK 4.8====================
+
+// Оголоси дві зміні:
+
+// Ім'я змінної	Очікуване значення
+// lastElementIndex	Індекс останнього елемента масиву fruits через довжина_масиву - 1
+// lastElement	Значення останнього елемента масиву
+
+// const fruits = ["apple", "peach", "pear", "banana"];
+
+// // Change code below this line
+
+// const lastElementIndex = fruits.length - 1;
+// const lastElement = fruits[lastElementIndex];
+
+// console.log(lastElementIndex); //3
+// console.log(lastElement); //banana
+
+// ====================AUTOCHECK 4.9====================
+
+// Напиши функцію getExtremeElements(array), яка приймає один параметр array - масив елементів довільної довжини.
+// Функція повинна повертати масив з двох елементів - першого і останнього елемента параметра array.
+
+// function getExtremeElements(array) {
+//   // Change code below this line
+
+//   if (array.length === 0) {
+//     return [];
+//   }
+
+//   return array.slice(0, 1).concat(array.slice(-1));
+
+//   // Change code above this line
+// }
+
+// console.log(getExtremeElements([1, 2, 3, 4, 5])); //[1, 5]
+// console.log(getExtremeElements(["Earth", "Mars", "Venus"])) //["Earth", "Venus"]
+// console.log(getExtremeElements(["apple", "peach", "pear", "banana"])); //["apple", "banana"]
+
+// ====================AUTOCHECK 4.10====================
+
+// Доповни код функції splitMessage(message, delimiter) таким чином, щоб вона повертала у змінній words результат
+// поділу рядка message за роздільником delimiter - масив рядків.
+
+// function splitMessage(message, delimiter) {
+//   let words;
+//   // Change code below this line
+//   words = message.split(delimiter);
+//   // Change code above this line
+//   return words;
+// }
+
+// console.log(splitMessage("Mango hurries to the train", " ")); //["Mango", "hurries", "to", "the", "train"]
+// console.log(splitMessage("Mango", "")); //["M", "a", "n", "g", "o"]
+// console.log(splitMessage("best_for_week", "_")); //["best", "for", "week"]
+
+// ====================AUTOCHECK 4.11====================
+
+// Сервісу гравірування прикрас потрібна функція, яка б автоматично рахувала ціну гравірування, залежно від кількості слів і ціни за слово.
+// Оголошена функція calculateEngravingPrice(message, pricePerWord).Ця функція приймає рядок, що складається зі слів, розділених лише пробілами
+// (параметр message) та ціну гравірування одного слова(параметр pricePerWord).
+// Напиши тіло функції, щоб вона повертала загальну вартість гравірування усіх слів в рядку.
+
+// function calculateEngravingPrice(message, pricePerWord) {
+//   // Change code below this line
+  
+//   if (message === "") {
+//     return pricePerWord = 0;
+//   }
+
+//   totalPrice = message.split(' ').length *pricePerWord;
+//   return totalPrice;
+
+//    // Change code above this line
+// }
+
+// console.log(calculateEngravingPrice("JavaScript is in my blood", 10)); //50
+// console.log(calculateEngravingPrice("JavaScript is in my blood", 20)); //100
+// console.log(calculateEngravingPrice("Web-development is creative work", 40)); //160
+// console.log(calculateEngravingPrice("Web-development is creative work", 20)); //80
+// console.log(calculateEngravingPrice("")); //[]
+
+// ====================AUTOCHECK 4.12====================
+
+// Доповни код функції makeStringFromArray(array, delimiter) таким чином, щоб вона повертала у змінній string результат
+// з`єднання елементів масиву array з роздільником delimiter - рядок.
+
+// function makeStringFromArray(array, delimiter) {
+//   let string;
+//   // Change code below this line
+
+//   if (array.length === 0) {
+//     return;
+//   }
+
+//   string = array.join(delimiter);
+
+//   // Change code above this line
+//   return string;
+//   }
+
+// console.log(makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " ")); //Mango hurries to the train
+// console.log(makeStringFromArray(["M", "a", "n", "g", "o"], "")); //Mango
+// console.log(makeStringFromArray(["top", "picks", "for", "you"], "_")); //top_picks_for_you
+// console.log(makeStringFromArray([]));
+
+// ====================AUTOCHECK 4.13====================
+
+// Термін slug - це людино - зрозумілий унікальний ідентифікатор, який використовується у веб - розробці для
+// створення читабельних URL - адрес.
+
+// Наприклад, замість того, щоб користувач побачив в адресному рядку mysite.com / posts / 1q8fh74tx, можна
+// зробити slug з назви статті.В результаті адреса буде приємнішою для сприйняття:
+// mysite.com / posts / arrays -for-begginers.
+
+// Увага
+// Slug - це завжди рядок у нижньому регістрі, слова якого розділені тире.
+
+// Напиши функцію slugify(title), яка приймає заголовок статті, параметр title, і повертає slug, створений з цього рядка.
+
+// Значенням параметра title будуть рядки, слова яких розділені лише пробілами
+// Усі символи slug повинні бути у нижньому регістрі
+// Всі слова slug повинні бути розділені тире
+
+// function slugify(title) {
+//   // Change code below this line
+
+//   return title.toLowerCase().split(" ").join("-");
+
+//   // Change code above this line
+// }
+
+// console.log(slugify("Arrays for begginers")); //arrays-for-begginers
+// console.log(slugify("English for developer")); //english-for-developer
+// console.log(slugify("Ten secrets of JavaScript")); //ten-secrets-of-javascript
+// console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); //how-to-become-a-junior-developer-in-two-weeks
+
+// ====================AUTOCHECK 4.14===================
+
+// Доповни код таким чином, щоб змінні містили часткові копії вихідного масиву fruits.
+
+// firstTwoEls - масив із перших двох елементів
+// nonExtremeEls - масив з усіх елементів, крім першого та останнього
+// lastThreeEls - масив із трьох останніх елементів
+
+// const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
+
+// // Change code below this line
+// const firstTwoEls = fruits.slice(0, 2); //["apple", "plum"]
+// const nonExtremeEls = fruits.slice(1, 4); //["plum", "pear", "orange"]
+// const lastThreeEls = fruits.slice(-3); //["pear", "orange", "banana"]
+
+// console.log("firstTwoEls:", firstTwoEls);
+// console.log("nonExtremeEls", nonExtremeEls);
+// console.log("lastThreeEls:", lastThreeEls);
+
+// ====================AUTOCHECK 4.15===================
+
+// Доповни код таким чином, щоб у змінній allClients утворився масив усіх елементів масивів oldClients і newClients.
+
+// const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+// const newClients = ['Peach', 'Houston'];
+
+// const allClients = oldClients.concat(newClients); // Change this line
+
+// console.log(allClients); //["Mango", "Ajax", "Poly", "Kiwi", "Peach", "Houston"]
+
+// ====================AUTOCHECK 4.16===================
+
+// Напиши функцію makeArray(firstArray, secondArray, maxLength) для створення нового масиву з усіма елементами
+// двох вихідних firstArray і secondArray.Параметр maxLength містить максимально допустиму довжину нового масиву.
+
+// Якщо кількість елементів нового масиву більша за maxLength, функція повинна повернути копію масиву
+// довжиною maxLength елементів.В іншому випадку функція повинна повернути новий масив повністю.
+
+// function makeArray(firstArray, secondArray, maxLength) {
+//   // Change code below this line
+//   return firstArray.concat(secondArray).slice(0, maxLength);
+
+//     // Change code above this line
+//   }
+
+//   console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); //повертає ["Mango", "Poly", "Ajax"]
+//   console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); //повертає ["Mango", "Poly", "Houston", "Ajax"]
+//   console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); //повертає ["Mango", "Ajax", "Chelsea"]
+//   console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); //повертає ["Earth", "Jupiter"]
+//   console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); //повертає ["Earth", "Jupiter", "Neptune", "Uranus"]
+//   console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); //повертає []
+
 
 
 
