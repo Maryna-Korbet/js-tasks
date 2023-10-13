@@ -4972,7 +4972,7 @@
 
 // ====================AUTOCHECK 10.5===================
 
-//TODO: Зміни код, побудувавши ланцюжок прототипів таким чином, щоб об'єкт ancestor був прототипом для parent, 
+//TODO: Зміни код, побудувавши ланцюжок прототипів таким чином, щоб об'єкт ancestor був прототипом для parent,
 //TODO: а той, своєю чергою, був прототипом для child.
 
 // const ancestor = {
@@ -5011,4 +5011,584 @@
 
 
 
+// ====================AUTOCHECK 11.1===================
+
+//TODO: Використовуючи ключове слово class, оголоси клас Car з порожнім тілом.
+
+// class Car {
+//     constructor(){
+    
+//   }
+// }
+
+// console.log(new Car());//{}
+
+// ====================AUTOCHECK 11.2===================
+
+//TODO: Додай класу Car метод constructor, який приймає три параметри:
+
+//TODO: brand - марка автомобіля.
+//TODO: model - модель автомобіля.
+//TODO: price - ціна автомобіля.
+//TODO: Клас Car повинен створювати об'єкт з однойменними властивостями brand, model і price, значеннями яких повинні бути передані аргументи під час його виклику з оператором new.
+
+// class Car {
+//   // Change code below this line
+//   constructor(brand, model, price) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
+
+// const audi = new Car("Audi", "Q3", 36000);
+// console.log(audi); //{ brand: "Audi", model: "Q3", price: 36000 }
+
+// const bmw = new Car("BMW", "X5", 58900);
+// console.log(bmw); //{ brand: "BMW", model: "X5", price: 58900 }
+
+// const nissan = new Car("BMW", "X5", 58900);
+// console.log(nissan); //{ brand: "Nissan", model: "Murano", price: 31700 }
+
+// ====================AUTOCHECK 11.3===================
+
+//TODO: Виконай рефакторинг класу Car таким чином, щоб він приймав один параметр - об'єкт з властивостями brand, model і price.
+//TODO: Деструктуризуй об'єкт в сигнатурі (підписі) конструктора.
+
+// class Car {
+//   // Change code below this line
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
+
+// const audi = new Car({
+//   brand: "Audi",
+//   model: "Q3",
+//   price: 36000
+// });
+// console.log(audi); //{ brand: "Audi", model: "Q3", price: 36000 }
+
+// const bmw = new Car({
+//   brand: "BMW",
+//   model: "X5",
+//   price: 58900
+// });
+// console.log(bmw); //{ brand: "BMW", model: "X5", price: 58900 }
+
+// const nissan = new Car({
+//   brand: "Nissan",
+//   model: "Murano",
+//   price: 31700
+// });
+// console.log(nissan); //{ brand: "Nissan", model: "Murano", price: 31700 }
+
+// ====================AUTOCHECK 11.4===================
+
+//TODO: Додай класу Car два методи.
+
+//TODO: getPrice() - повертає значення властивості price з об'єкта, який буде його викликати.
+//TODO: changePrice(newPrice) - оновлює значення властивості price в об'єкта, який буде його викликати на newPrice.
+
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code below this line
+//   getPrice() {
+//     return this.price;
+//   }
+  
+//   changePrice(newPrice) {
+//     this.price = newPrice;
+//   }
+//   // Change code above this line
+// }
+
+// ====================AUTOCHECK 11.5===================
+
+//TODO: Напиши клас Storage, який буде створювати об'єкти для управління складом товарів.
+//TODO: Клас очікує тільки один аргумент - початковий масив товарів, який записується у властивість items об'єкта, що створюється.
+
+//TODO: Оголоси наступні методи класу:
+
+//TODO: getItems() - повертає масив поточних товарів у властивості items об'єкта, який викликає цей метод.
+//TODO: addItem(newItem) - приймає новий товар newItem і додає його в масив товарів у властивості items об'єкта, який викликає цей метод.
+//TODO: removeItem(itemToRemove) - приймає товар itemToRemove і видаляє його з масиву товарів у властивості items об'єкта, який викликає цей метод.
+//TODO: Під коментарем ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, в якій твій код перевірятимуть тести.
+//TODO: Будь ласка, нічого там не змінюй.
+
+// class Storage {
+//   constructor(items) {
+//     this.items = items;
+//   }
+//   getItems() {
+//     return this.items;
+//   }
+//   addItem(newItem) {
+//     return this.items.push(newItem);
+//   }
+//   removeItem(itemToRemove) {
+//     const itemToRemoveIndex = this.items.indexOf(itemToRemove);
+    
+//     if (itemToRemoveIndex !== -1) {
+//       this.items.splice(itemToRemoveIndex, 1);
+//     }
+//     return this.items;
+//     }
+//   }
+
+// // Change code above this line
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// ====================AUTOCHECK 11.6===================
+
+//TODO: Напиши клас StringBuilder, який приймає один параметр initialValue - довільний рядок, який записується у властивість value об'єкта, що створюється.
+
+//TODO: Оголоси наступні методи класу:
+
+//TODO: getValue() - повертає поточне значення властивості value.
+//TODO: padEnd(str) - отримує параметр str (рядок) і додає його в кінець значення властивості value об'єкта, який викликає цей метод.
+//TODO: padStart(str) - отримує параметр str (рядок) і додає його на початок значення властивості value об'єкта, який викликає цей метод.
+//TODO: padBoth(str) - отримує параметр str (рядок) і додає його на початок і в кінець значення властивості value об'єкта, який викликає цей метод.
+//TODO: Під коментарем ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, в якій твій код перевірятимуть тести. Будь ласка, нічого там не змінюй.
+
+// class StringBuilder {
+//     constructor(initialValue){
+//       this.value = initialValue;
+//     }
+
+// getValue(){
+//       return this.value;
+// }
+// padEnd(str){
+//       this.value = this.value + str;
+//     }
+// padStart(str){
+//        this.value = str + this.value;
+//     }
+// padBoth(str){
+//       this.value = str + this.value + str;
+//     }
+// }
+
+// // Change code above this line
+// const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
+
+// ====================AUTOCHECK 11.7===================
+
+//TODO: Виконай рефакторинг класу Car таким чином, щоб властивість brand була приватною, і додай два методи для публічного інтерфейсу, для читання і зміни цієї властивості.
+
+//TODO: getBrand() - повертає значення приватної властивості brand.
+//TODO: changeBrand(newBrand) - змінює значення приватної властивості brand на newBrand.
+
+// class Car {
+//   // Change code below this line
+//   #brand;
+
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   getBrand() {
+//     return this.#brand;
+//   }
+//   changeBrand(newBrand) {
+//     return this.#brand = newBrand;
+//   }
+//   // Change code above this line
+// }
+
+// const audi = new Car({
+//   brand: "Audi",
+//   model: "Q3",
+//   price: 36000
+// });
+// console.log(audi); //{ model: "Q3", price: 36000 }
+
+// const bmw = new Car({
+//   brand: "bmw",
+//   model: "X5",
+//   price: 58900
+// });
+// console.log(bmw); //{ model: "X5", price: 58900 }
+
+// const nissan = new Car({
+//   brand: "Nissan",
+//   model: "Murano",
+//   price: 31700
+// })
+// console.log(nissan)//{ model: "Murano", price: 31700 }
+
+// console.log(nissan.getBrand()); //Nissan
+// console.log(nissan.changeBrand("Honda")); //Honda
+
+// ====================AUTOCHECK 11.8===================
+
+//TODO: Виконай рефакторинг класу Storage, зробивши властивість items приватною.
+
+//TODO: Під коментарем ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, в якій твій код перевірятимуть тести.
+//TODO: Будь ласка, нічого там не змінюй.
+
+// class Storage {
+//   // Change code below this line
+
+//   #items
+
+//   constructor(items) {
+//     this.#items = items;
+//   }
+
+//   getItems() {
+//     return this.#items;
+//   }
+
+//   addItem(newItem) {
+//     this.#items.push(newItem);
+//   }
+
+//   removeItem(itemToRemove) {
+//     this.#items = this.#items.filter(item => item !== itemToRemove);
+//   }
+// }
+
+// // Change code above this line
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
+
+// ====================AUTOCHECK 11.9===================
+
+//TODO: Виконай рефакторинг класу StringBuilder, зробивши властивість value приватною.
+
+//TODO: Під коментарем ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, в якій твій код перевірятимуть тести.
+//TODO: Будь ласка, нічого там не змінюй.
+
+// class StringBuilder {
+//   // Change code below this line
+//   #value;
+
+//   constructor(initialValue) {
+//     this.#value = initialValue;
+//   }
+
+//   getValue() {
+//     return this.#value;
+//   }
+
+//   padEnd(str) {
+//     this.#value += str;
+//   }
+
+//   padStart(str) {
+//     this.#value = str + this.#value;
+//   }
+
+//   padBoth(str) {
+//     this.padStart(str);
+//     this.padEnd(str);
+//   }
+// }
+
+// // Change code above this line
+// const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
+
+// ====================AUTOCHECK 11.10===================
+
+//TODO: Виконай рефакторинг класу Car.Зроби властивості model і price приватними, а також #brand.
+//TODO: Стандартизуй публічний інтерфейс класу, замінивши вже оголошені методи на гетери та сетери brand, model і price, для взаємодії з приватними властивостями.
+
+// class Car {
+//   // Change code below this line
+//   #brand;
+//   #model;
+//   #price;
+
+//   constructor({ brand, model, price }) {
+//     this.#brand = brand;
+//     this.#model = model;
+//     this.#price = price;
+//   }
+
+//   get brand() {
+//     return this.#brand;
+//   }
+
+//   set brand(newBrand) {
+//     this.#brand = newBrand;
+//   }
+
+//   get model() {
+//     return this.#model;
+//   }
+
+//   set model(newModel) {
+//     this.#model = newModel;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     this.#price = newPrice;
+//   }
+//   // Change code above this line
+// }
+
+// ====================AUTOCHECK 11.11===================
+
+//TODO: Виконай рефакторинг класу Car.
+//TODO: Додай публічну статичну властивість MAX_PRICE зі значенням 50000 - максимально допустима ціна автомобіля.
+
+//TODO: Додай сетеру price перевірку значення параметра newPrice, що передається.
+//TODO: Якщо воно більше за MAX_PRICE, сеттер нічого не робить, а якщо менше або дорівнює, то перезаписує ціну автомобіля.
+
+// class Car {
+//   // Change code below this line
+//   static MAX_PRICE = 50000;
+
+//   #price;
+
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     if (newPrice < Car.MAX_PRICE) {
+//       return this.#price = newPrice;
+//     }
+//   }
+//   // Change code above this line
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
+
+// ====================AUTOCHECK 11.12===================
+
+//TODO: Додай класу Car публічний статичний метод checkPrice(price), що приймає ціну автомобіля.
+//TODO: Метод повинен порівняти значення параметра price і приватної статичного властивості MAX_PRICE.
+
+//TODO: Якщо ціна автомобіля перевищує максимальну, метод повинен повернути рядок "Error! Price exceeds the maximum".
+//TODO: В іншому випадку метод повинен повернути рядок "Success! Price is within acceptable limits".
+//TODO: Під оголошенням класу ми додали ініціалізацію екземпляра і виклики методів, щоб показати, як буде використовуватися метод checkPrice(price).
+
+// class Car {
+//   static #MAX_PRICE = 50000;
+//   // Change code below this line
+//   static checkPrice(price) {
+//     if (price > Car.#MAX_PRICE) {
+//       return `Error! Price exceeds the maximum`;
+//     }
+//     return `Success! Price is within acceptable limits`;
+//   }
+//   // Change code above this line
+//   constructor({ price }) {
+//     this.price = price;
+//   }
+// }
+
+// const audi = new Car({ price: 36000 });
+// const bmw = new Car({ price: 64000 });
+
+// console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+// console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+// ====================AUTOCHECK 11.13===================
+
+//TODO: У застосунку потрібен адміністратор з можливістю додавати пошти користувачів у чорний список.
+
+//TODO: Оголоси клас Admin, який наслідує від класу User
+//TODO: Додай класу Admin публічну статичну властивість AccessLevel(рівень доступу),
+//TODO: значення якої — це об'єкт {BASIC: "basic", SUPERUSER: "superuser"}
+
+// class User {
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// // Change code below this line
+
+// class Admin extends User {
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser"
+//   };
+// }
+
+// console.log(Admin.AccessLevel.BASIC); //"basic"
+// console.log(Admin.AccessLevel.SUPERUSER); //"superuser"
+
+// ====================AUTOCHECK 11.14===================
+
+//TODO: Додай класу Admin метод constructor, який приймає один параметр - об'єкт налаштувань з двома властивостями email і accessLevel.
+//TODO: Додай класу Admin публічну властивість accessLevel, значення якої буде передаватися під час виклику конструктора.
+
+//TODO: Щоб показати, як буде використовуватися клас Admin, ми додали ініціалізацію екземпляра під оголошенням класу.
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+// class Admin extends User {
+//   // Change code below this line
+
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+
+//   constructor({ email, accessLevel }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//   }
+
+//   // Change code above this line
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
+
+// ====================AUTOCHECK 11.15===================
+
+//TODO: Додай класу Admin наступні властивості і методи.
+
+//TODO: Публічну властивість blacklistedEmails для зберігання чорного списку поштових адрес користувачів.
+//TODO: Значення за замовчуванням — це порожній масив.
+
+//TODO: Публічний метод blacklist(email) для додавання пошти у чорний список.
+//TODO: Метод повинен додавати значення параметра email в масив, що зберігається у властивості blacklistedEmails.
+
+//TODO: Публічний метод isBlacklisted(email) для перевірки пошти у чорному списку.
+//TODO: Метод повинен перевіряти наявність значення параметра email в масиві, що зберігається
+//TODO: у властивості blacklistedEmails, і повертати true або false.
+//TODO: Після оголошення класу ми додали ініціалізацію екземпляра і виклики методів у тій послідовності,
+//TODO: в якій твій код перевірятимуть тести.Будь ласка, нічого там не змінюй.
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+
+//   static AccessLevel = {
+//     BASIC: "basic",
+//     SUPERUSER: "superuser",
+//   };
+
+//   constructor({ email, accessLevel }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//   }
+
+// // Change code below this line
+
+// // додаємо публічну властивість, яка є порожнім масивом (для зберігання чорного списку поштових адрес)
+//   blacklistedEmails = [];
+
+//   //додаємо значення пошти в масив (для додавання пошти у чорний список)
+//   blacklist(email) {
+//     this.blacklistedEmails.push(email);
+//   }
+//   // перевіряємо наявність пошти в масиві (для перевірки пошти у чорному списку)
+//   isBlacklisted(email) {
+//     if (this.blacklistedEmails.includes(email)) {
+//       return true;
+//     }
+//     return false;
+//   }
+//   // Change code above this line
+// }
+
+// const mango = new Admin({
+//   email: "mango@mail.com",
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
+
+// mango.blacklist("poly@mail.com");
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted("mango@mail.com")); // false
+// console.log(mango.isBlacklisted("poly@mail.com")); // true
 
