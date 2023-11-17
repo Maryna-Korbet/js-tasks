@@ -43,26 +43,26 @@
 // localStorage.clear();
 
 
-// ***********difference between localStorage dnd sessionStorage*************** \\
+// ***********Difference between localStorage dnd sessionStorage*************** \\
 
-const btnLS = document.querySelector('.js-ls');
-const btnSS = document.querySelector('.js-ss');
-const btnClean = document.querySelector('.js-clean'); 
+// const btnLS = document.querySelector('.js-ls');
+// const btnSS = document.querySelector('.js-ss');
+// const btnClean = document.querySelector('.js-clean');
 
-btnLS.addEventListener('click', handlerLS);
-btnSS.addEventListener('click', handlerSS);
-btnClean.addEventListener('click', handlerClean);
+// btnLS.addEventListener('click', handlerLS);
+// btnSS.addEventListener('click', handlerSS);
+// btnClean.addEventListener('click', handlerClean);
 
-function handlerLS() {
-    localStorage.setItem('ls-name', 'add to local');
-}
+// function handlerLS() {
+//     localStorage.setItem('ls-name', 'add to local');
+// }
 
-function handlerSS() {
-    sessionStorage.setItem('ss-name', 'add to session');
-}
+// function handlerSS() {
+//     sessionStorage.setItem('ss-name', 'add to session');
+// }
 
-function handlerClean() {
-    localStorage.removeItem('ls-name');
-    sessionStorage.removeItem('ss-name');
-}
+// function handlerClean() {
+//     localStorage.removeItem('ls-name');
+//     sessionStorage.removeItem('ss-name');
+// }
 
