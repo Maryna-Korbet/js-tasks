@@ -66,3 +66,154 @@
 //     sessionStorage.removeItem('ss-name');
 // }
 
+
+// ***********setTimeout*************** \\
+
+// console.log("A");
+
+// setTimeout(() => console.log("B"), 0);
+
+// console.time('for');
+// for (let i = 0; i < 3000; i += 1) {
+//     console.log("B");
+// }
+// console.timeEnd('for'); //for:23/202125 ms
+
+
+// ***********setTimeout example*************** \\
+
+// //TODO: Start setTimeout
+// const idSetTimeout = setTimeout(() => { console.log('Time is over') }, 1000);
+// console.log(idSetTimeout);
+
+// //TODO: Delete setTimeout
+// clearTimeout(idSetTimeout);
+// console.log("deleted setTimeout");
+
+// //TODO: callback
+// const callback = setTimeout((name, country) => {
+//     console.log(`Hello my name is ${name}, i from ${country}`);
+// }, 1000, 'Alice', 'Ukrane');
+
+
+// ***********setInterval example*************** \\
+
+// //TODO: Start setInterval
+// const idSetInterval= setInterval(() => { console.log('setInterval') }, 1000);
+
+// //TODO: Delete setInterval
+// clearInterval(idSetInterval);
+
+
+// ***********Advertising*************** \\
+
+//TODO: Створимо блок з рекламою яка зникне через 10 секунд
+
+// const content = document.querySelector('.js-content');
+// const text = document.querySelector('.js-text');
+
+// let counter = 10;
+
+// text.textContent = `Залишилося ${counter} секунд`;
+
+// const id = setInterval(() => {
+//     counter -= 1;
+//     text.textContent = `Залишилося ${counter} секунд`;
+
+//     if (!counter) {
+//         content.style.display = 'none';
+//         clearInterval(id);
+//     }
+// }, 1000);
+
+
+// ***********class Date*************** \\
+
+// //TODO: поточна дата та час
+// const currentDate = new Date();
+// console.log(currentDate);
+
+// const targetDate = new Date('09/12/2023');
+// console.log(targetDate);
+
+// console.log(targetDate - currentDate); //-5904102445
+
+// console.log(currentDate.getDate()); //19
+// console.log(currentDate.getDay()); //0
+// console.log(currentDate.getFullYear()); //2023
+// console.log(currentDate.getMonth()); //10
+
+// //TODO:Відобразити дату та час в форматі України
+// console.log(currentDate.toLocaleTimeString('uk')); //07:10:40
+// console.log(currentDate.toLocaleDateString('uk')); //19.11.2023
+
+
+// ***********Clock*************** \\
+
+//TODO: Потрібно створити два приклади годинника (Електронний та механічний)
+
+// const arrDays = [
+//   "Неділя",
+//   "Понеділок",
+//   "Вівторок",
+//   "Середа",
+//   "Четвер",
+//   "П`ятниця",
+//   "Субота",
+// ];
+// const namesOfMonth = [
+//   "Січень",
+//   "Лютий",
+//   "Березень",
+//   "Квітень",
+//   "Травень",
+//   "Червень",
+//   "Липень",
+//   "Серпень",
+//   "Вересень",
+//   "Жовтень",
+//   "Листопад",
+//   "Грудень",
+// ];
+
+// const elements = {
+//   day: document.querySelector(".date-day"),
+//   date: document.querySelector(".date"),
+//   month: document.querySelector(".date-month"),
+//   year: document.querySelector(".date-year"),
+
+//   digital: document.querySelector(".digital-clock"),
+
+//   hours: document.querySelector(".clock-hours__arrow"),
+//   minutes: document.querySelector(".clock-minutes__arrow"),
+//   seconds: document.querySelector(".clock-seconds__arrow"),
+// };
+
+// setInterval(() => {
+//   const currentDate = new Date();
+//   const day = arrDays[currentDate.getDay()];
+//   const date = currentDate.getDate();
+//   const month = namesOfMonth[currentDate.getMonth()];
+//   const year = currentDate.getFullYear();
+
+//   const time = currentDate.toLocaleTimeString("uk");
+
+//   const hours = currentDate.getHours();
+//   const minutes = currentDate.getMinutes();
+//   const seconds = currentDate.getSeconds();
+
+//   const secDeg = (360 / 60) * seconds;
+//   const minutesDeg = (360 / 60) * minutes + (360 / 60 / 60) * seconds;
+//   const hoursDeg = (360 / 12) * hours + (360 / 12 / 60) * minutes;
+//   console.log(secDeg);
+
+//   elements.day.textContent = day;
+//   elements.date.textContent = date;
+//   elements.month.textContent = month;
+//   elements.year.textContent = year;
+//   elements.digital.textContent = time;
+
+//   elements.seconds.style.transform = `rotate(${secDeg}deg)`;
+//   elements.minutes.style.transform = `rotate(${minutesDeg}deg)`;
+//   elements.hours.style.transform = `rotate(${hoursDeg}deg)`;
+// }, 1000);
