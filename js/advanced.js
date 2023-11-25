@@ -310,3 +310,17 @@
 //   })
 //   .finally(() => console.log("The End"));
 
+
+//*************** Fetch *******************\\
+
+// fetch("https://rickandmortyapi.com/api/character")
+//   .then(res => {
+//     if (!res.ok) {
+//       throw new Error('Custom error log');
+//     }
+//     return res.json();
+//   })
+//   .then(data => console.log(data))
+//   .catch ((err) => console.log(err))
+
+
