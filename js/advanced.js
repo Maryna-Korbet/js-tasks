@@ -217,3 +217,96 @@
 //   elements.minutes.style.transform = `rotate(${minutesDeg}deg)`;
 //   elements.hours.style.transform = `rotate(${hoursDeg}deg)`;
 // }, 1000);
+
+
+// ***********Приклад роботи синхронного та асинхронного JS*************** \\
+
+//TODO: В якій послідовності виконуються операції?
+
+// console.log("A"); //1
+
+// setTimeout(() => console.log("B"), 0); //4
+
+// Promise.resolve("C").then((value) => console.log(value)); //3
+
+// console.log("D"); //2
+
+//*********Поділення асинхронного JS на мікро та макро процеси**************\\
+
+// ?Мікро процеси \\
+// Promise
+// Observer
+
+// ?Макро процеси\\
+// setTimeout
+// setInterval
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/setImmediate
+// setImmediate
+// https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+// requestAnimationFrame
+
+
+//*********Приклад роботи синхронного та асинхронного JS**************\\
+
+//TODO: Пронумеруй виклики методів відповідно до порядку їх виконання
+
+// console.log("A"); //1
+
+// setTimeout(() => console.log("B"), 0); //5
+
+// Promise.reject("C").then((value) => console.log(value)).catch(err => console.log(err)); //4
+// Promise.resolve("D").then((value) => console.log(value)); //3
+
+// setTimeout(() => console.log("E"), 0); //6
+
+// console.log("F"); //2
+
+
+//*************** Promise *******************\\
+
+// ?Створення Promise \\
+
+// const promise = new Promise((resolve, reject) => {
+//   const random = Math.random();
+
+//   setTimeout(() => {
+//     if (random > 0.5) {
+//       resolve({name: '😻'});
+//     }
+//     else {
+//       reject('😿');
+//     }
+//   }, 100);
+// });
+
+// console.log(promise);
+
+// ?Обробка Promise \\
+
+// promise
+//   .then((response) => {
+//     console.log(response);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+//   .finally(() => console.log("The End"));
+
+
+// ?Обробка Promise  з двома then \\
+
+// promise
+//   .then((response) => {
+//     console.log(response);
+//     return response;
+//   },
+//     (err) => console.log("error in first then", err) //обовязково вказуємо
+//   )
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   })
+//   .finally(() => console.log("The End"));
+
